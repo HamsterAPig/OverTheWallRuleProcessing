@@ -1,5 +1,6 @@
 package LinkConversion
 
+// SS链接转换
 import (
 	. "OverTheWallRuleProcessing/internal"
 	"OverTheWallRuleProcessing/internal/ContentParse"
@@ -25,6 +26,6 @@ func ParseShadowsocks(s string) (*ProxyInfoNode, error) {
 		Server:    matches[2],
 		Port:      matches[3],
 		Chipter:   baseSplit[0],
-		OrderName: matches[4],
+		OrderName: strings.Trim(matches[4], "\r"),
 	}, nil
 }

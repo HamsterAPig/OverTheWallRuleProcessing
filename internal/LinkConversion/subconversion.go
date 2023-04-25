@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// RunConversionSub 订阅链接转换，根据前缀匹配不同的类型
 func RunConversionSub(subStrings []string) ([]ProxyInfoNode, error) {
 	result := make([]ProxyInfoNode, len(subStrings))
 	for i, item := range subStrings {

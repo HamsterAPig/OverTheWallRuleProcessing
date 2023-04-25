@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-// GetUrlRespAndDecode 接受一个url，获取其内容，然后返回其相应
+// GetUrlResp  接受一个url，获取其内容，然后返回其相应
 func GetUrlResp(url string) (string, error) {
 	// 使用 http.Get 来获取url的内容
 	resp, err := http.Get(url)
