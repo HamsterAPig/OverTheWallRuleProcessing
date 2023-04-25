@@ -50,7 +50,7 @@ func SplitAndDecode(text string) ([]string, error) {
 }
 
 // ParseB64String base64解码
-func ParseB64String(b64String string) ([]byte, error) {
+func ParseB64String(b64String string) (string, error) {
 	missingPadding := len(b64String) % 4
 	if missingPadding != 0 {
 		b64String = b64String + strings.Repeat("=", missingPadding)
@@ -62,9 +62,9 @@ func ParseB64String(b64String string) ([]byte, error) {
 			decodedBytes, err = base64.StdEncoding.DecodeString(b64String)
 			if err != nil {
 				log.Println("decode base64 fail:", err)
-				return []byte{}, err
+				return "", err
 			}
 		}
 	}
-	return decodedBytes, nil
+	return string(decodedBytes), nil
 }
